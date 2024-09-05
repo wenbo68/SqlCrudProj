@@ -48,3 +48,4 @@ jobs:
       with:
         user: __token__
         password: ${{ secrets.testSecret }}
+        verbose: true
