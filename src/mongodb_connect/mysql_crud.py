@@ -1,6 +1,7 @@
 import pymysql
 
 class mysql_crud:
+
     def __init__(self, uri: str, port: int, user: str, password: str, database: str):
         self.db = self.create_database(uri, port, user, password)
         self.cursor = self.create_cursor(self.db)
@@ -19,7 +20,7 @@ class mysql_crud:
             user=user,
             password=password
         )
-    
+
     def create_database1(self, uri, port, user, password, database):
         return pymysql.connect(
             host=uri,
@@ -28,10 +29,10 @@ class mysql_crud:
             password=password,
             database=database
         )
-    
+
     def create_cursor(self, db):
         return db.cursor()
-    
+
     def create_table(self, table_name, columns):
         column_definitions = []
         for column in columns:
