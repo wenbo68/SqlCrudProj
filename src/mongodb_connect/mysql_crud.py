@@ -1,18 +1,18 @@
 import pymysql
 
 class mysql_crud:
-    def __init__(self, uri: str, port:int, user:str, password:str, database:str):
-        self.db = self.create_database(uri,port,user,password)
+    def __init__(self, uri: str, port: int, user: str, password: str, database: str):
+        self.db = self.create_database(uri, port, user, password)
         self.cursor = self.create_cursor(self.db)
         # Create the database (if it doesn't exist)
         sql = f"CREATE DATABASE IF NOT EXISTS {database}"
         self.cursor.execute(sql)
         self.cursor.close()
         self.db.close()
-        self.db = self.create_database1(uri,port,user,password,database)
+        self.db = self.create_database1(uri, port, user, password, database)
         self.cursor = self.db.cursor()
 
-    def create_database(self,uri,port,user,password):
+    def create_database(self, uri, port, user, password):
         return pymysql.connect(
             host=uri,
             port=port,
@@ -20,7 +20,7 @@ class mysql_crud:
             password=password
         )
     
-    def create_database1(self,uri,port,user,password,database):
+    def create_database1(self, uri, port, user, password, database):
         return pymysql.connect(
             host=uri,
             port=port,
@@ -29,7 +29,7 @@ class mysql_crud:
             database=database
         )
     
-    def create_cursor(self,db):
+    def create_cursor(self, db):
         return db.cursor()
     
     def create_table(self, table_name, columns):
