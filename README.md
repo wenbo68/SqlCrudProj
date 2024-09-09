@@ -9,4 +9,7 @@
    a. identifies virtual env
    b. sets up python
    c. install dependencies used for CI (linting, testing)
-   d. 
+   d. run linting/tests with tox
+2. python-publish.yml: CD workflow ran by Github Actions when releasing
+   a. sets up env/python
+   b. 
