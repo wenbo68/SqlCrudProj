@@ -15,4 +15,3 @@
    b. install dependencies
    c. build as package (refer to setup.py/setup.cfg/pyproject.toml)
    d. publish to pypi
-   
